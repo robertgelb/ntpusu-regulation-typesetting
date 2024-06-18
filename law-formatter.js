@@ -20,7 +20,7 @@ function formatLaw() {
 		
 		
 		// 章節標題
-        if (/^第[一二三四五六七八九十百千萬零]+[編章節款目]/.test(line)) {
+        if (/^第[一二三四五六七八九十百千萬零]+[編章節款項目]/.test(line)) {
             if (inTiao) {
                 outputHtml += '\t</div>\n\t<!-- end 條 -->\n';
                 inTiao = false;
@@ -30,9 +30,10 @@ function formatLaw() {
                 '章': 'law-chapter',
                 '節': 'law-section',
                 '款': 'law-hsubsection',
+                '項': 'law-hxiang',
                 '目': 'law-hitem'
             };
-            const headingType = line.match(/第[一二三四五六七八九十百千萬零]+([編章節款目])/)[1];
+            const headingType = line.match(/第[一二三四五六七八九十百千萬零]+([編章節款項目])/)[1];
             outputHtml += `\t<div class="zhangJie">\n\t\t<p class="${headingClass[headingType]}">${line}</p>\n\t</div>\n`;
         }
         // 條號

@@ -1,7 +1,7 @@
 /* For regulations */
 
 /* division, chapter, section */
-p.law-division, p.law-chapter, p.law-section, p.law-hsubsection, p.law-hitem {
+p.law-division, p.law-chapter, p.law-section, p.law-hsubsection, p.law-hxiang, p.law-hitem {
 	font-weight: bold;
 	font-size: larger;
 }
@@ -11,7 +11,7 @@ p.law-division {
 p.law-chapter {
 	margin-left: 1em;
 }
-p.law-section {
+p.law-section, p.law-hxiang {
 	margin-left: 2em;
 }
 p.law-hsubsection {
