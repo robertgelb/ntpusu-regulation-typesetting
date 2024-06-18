@@ -1,0 +1,73 @@
+/* For regulations */
+
+/* division, chapter, section */
+p.law-division, p.law-chapter, p.law-section, p.law-hsubsection, p.law-hitem {
+	font-weight: bold;
+	font-size: larger;
+}
+p.law-division {
+	margin-left: 0em;
+}
+p.law-chapter {
+	margin-left: 1em;
+}
+p.law-section {
+	margin-left: 2em;
+}
+p.law-hsubsection {
+	margin-left: 4em;
+}
+p.law-hitem {
+	margin-left: 5em;
+}
+
+div.law-article {
+    counter-reset: num;
+	position: relative;
+}
+
+p.law-art-num {
+	font-weight: bold;
+}
+
+p.xiang {
+	margin-left: 2em;
+	margin-top: 5px; margin-bottom: 5px;
+}
+
+p.xiang:not(:only-of-type)::before {
+	counter-increment: num;
+	content: counter(num, upper-roman);
+	display: inline-block;
+	position: absolute;
+	left: -2em; /*  0em */
+	margin-left: -1em;
+	text-align: right;
+	width: 2em;
+	font-family: 'Times New Roman', serif;
+	color:#777;
+}
+
+p.kuan {
+	margin-left: 4em;
+	text-indent: -2em;
+	margin-top: 5px; margin-bottom: 5px;
+}
+
+p.mu {
+	margin-left: 7em;
+	text-indent: -3em;
+	margin-top: 5px; margin-bottom: 5px;
+}
+/*
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+@media screen {
+  .no-screen {
+    display: none;
+  }
+}
+*/

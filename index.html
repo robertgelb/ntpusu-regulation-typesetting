@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NTPUSU Regulatory Typesetting Tool</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.js"></script>
+    <style type="text/css">
+    html {
+        /** 設定領銜主色 */
+        --ts-accent-color: #00ADEA;
+    }
+	textarea#lawCodeShow, textarea#lawTextInput {
+		height: 200px;
+	}
+    </style>
+    <link rel="stylesheet" href="law-style.css" />
+</head>
+<body>
+
+<div class="ts-container">
+<!--<div class="ts-content">-->
+	<div class="ts-wrap is-vertical">
+		
+		<div class="ts-space is-small"></div>
+
+		<div class="ts-content is-tertiary is-vertically-very-padded">
+			<div class="ts-center">
+				<div class="ts-header is-large">Regulatory Typesetting Tool</div>
+				<div class="ts-text is-secondary">National Taipei University Student Union</div>
+			</div>
+		</div>
+
+		<div class="ts-breadcrumb is-divided is-secondary">
+			<a class="item" href="/">
+				<span class="ts-icon is-house-icon"></span>
+			</a>
+			<a class="item is-active">
+				Regulatory Typesetting
+			</a>
+		</div>
+
+		<!-- textarea grid -->
+		<div class="ts-grid mobile:is-stacked is-evenly-divided is-stretched">
+
+
+		<!-- input area -->
+		<div class="column">
+		<div class="ts-content">
+			<div class="ts-input is-resizable">
+				<textarea placeholder="Please follow the Formatting Guidelines and fill in the plain text of the regulation here." id="lawTextInput"></textarea>
+			</div>
+			<div class="ts-space is-small"></div>
+			
+			<div class="ts-wrap">
+				<button class="ts-button is-outlined" data-toggle="lawFormat:is-visible">
+					Formatting Guidelines
+				</button>
+				<button class="ts-button" onclick="formatLaw()">
+					Generate
+				</button>
+			</div>
+			
+			
+
+			<!-- format guide window -->
+			<div class="ts-modal" data-name="lawFormat">
+				<div class="content">
+					<div class="ts-content is-padded">
+						<p><b>編章節、條號</b>：不用縮排。</p>
+						<p><b>項</b>（及不分項條文）：每行前面加上一個全形空白「　」。</p>
+						<p><b>款、目</b>：以「一、」、「（一）」開頭。</p>
+					</div>
+					<div class="ts-divider"></div>
+					<div class="ts-content is-tertiary is-horizontally-padded">
+						<button class="ts-button" data-toggle="lawFormat:is-visible">
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- end format guide window -->
+		</div>
+		</div>
+		<!-- end input area -->
+
+		<!-- show code area -->
+		<div class="column">
+		<div class="ts-content">
+			<div class="ts-input is-resizable">
+				<textarea placeholder="This will show you the results in markup language, please copy it and paste into our WordPress custom HTML block." id="lawCodeShow" disabled></textarea>
+			</div>
+			<div class="ts-space is-small"></div>
+			<button class="ts-button is-accent" onclick="copySourceCode()">
+				Copy
+			</button>
+			
+		</div>
+		</div>
+		<!-- end show code area -->
+
+		</div><!-- end textarea grid -->	
+		
+		<div class="ts-divider is-center-text">Preview of Typesetting Results</div>
+		
+		<!-- preview result area -->
+		<div class="ts-content">
+			<div id="lawResultPreview"></div>
+		</div>
+		<!-- end preview result area -->	
+		
+		<div class="ts-divider is-section is-center-text">MPL-2.0 license. By NTPU Student Judiciary. <a href="https://github.com/robertgelb/ntpusu-regulation-typesetting">Github</a></div>
+		<!--<div class="ts-content">
+			<button class="ts-button is-secondary">Print to File</button>
+		</div>-->
+		
+	</div>	
+	
+
+    <script src="law-formatter.js"></script>
+
+<!--</div> end content -->
+</div><!-- end container -->
+
+<!-- Robert Gelb 2024-06-18 -->
+
+</body>
+</html>
