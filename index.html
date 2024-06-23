@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>NTPUSU Regulatory Typesetting Tool</title>
-  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.5/tocas.min.js"></script>
+    <link rel="stylesheet" href="law-style.css" />
     <style type="text/css">
     html{--ts-accent-color:#00ADEA;}textarea#lawCodeShow,textarea#lawTextInput{height:200px;}
+	@media print {.no-print {display: none;}} @media screen {.no-screen {display: none;}}
     </style>
-    <link rel="stylesheet" href="law-style.css" />
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<div class="ts-breadcrumb is-divided is-secondary">
+		<div class="ts-breadcrumb is-divided is-secondary no-print">
 			<a class="item" href="/">
 				<span class="ts-icon is-house-icon"></span>
 			</a>
@@ -37,7 +37,7 @@
 		</div>
 
 		<!-- textarea grid -->
-		<div class="ts-grid mobile:is-stacked is-evenly-divided is-stretched">
+		<div class="ts-grid mobile:is-stacked is-evenly-divided is-stretched no-print">
 
 
 		<!-- input area -->
@@ -62,7 +62,7 @@
 			<!-- format guide window -->
 			<div class="ts-modal" data-name="lawFormat">
 				<div class="content">
-					<div class="ts-content is-padded">
+					<div class="ts-content is-padded" lang="zh-TW">
 						<p><b>編章節、條號</b>：不用縮排。</p>
 						<p><b>項</b>（及不分項條文）：每行前面加上一個全形空白「　」。</p>
 						<p><b>款、目</b>：以「一、」、「（一）」開頭。</p>
@@ -95,9 +95,11 @@
 		</div>
 		<!-- end show code area -->
 
-		</div><!-- end textarea grid -->	
+		</div><!-- end textarea grid -->
 		
-		<div class="ts-divider is-center-text">Preview of Typesetting Results</div>
+		<div class="no-print">
+			<div class="ts-divider is-section is-center-text">Preview of Typesetting Results</div>
+		</div>
 		
 		<!-- preview result area -->
 		<div class="ts-content">
@@ -105,13 +107,18 @@
 		</div>
 		<!-- end preview result area -->	
 		
-		<div class="ts-divider is-section is-center-text">National Taipei University Student Union</div>
+		<div class="no-print">
+			<div class="ts-divider is-section is-center-text">National Taipei University Student Union</div>
+		</div>
 		<!--<div class="ts-content">
 			<button class="ts-button is-secondary">Print to File</button>
 		</div>-->
 		<div class="ts-content">
-			<div class="ts-text is-secondary is-center-aligned">
+			<div class="ts-text is-secondary is-center-aligned no-print">
 				By NTPU Student Judiciary, MPL-2.0 license / <a href="https://github.com/robertgelb/ntpusu-regulation-typesetting">Github</a> / Style - <a href="https://v4.tocas-ui.com">Tocas UI</a> / Powered by <a href="https://lionfree.net">Lionfree</a>.
+			</div>
+			<div class="ts-text is-tiny is-center-aligned no-screen">
+				generated using the NTPUSU Regulatory Typesetting Tool (developed by the Student Judiciary)
 			</div>
 		</div>
 		
@@ -122,8 +129,6 @@
 
 <!--</div> end content -->
 </div><!-- end container -->
-
-<!-- Robert Gelb 2024-06-18 -->
 
 </body>
 </html>
