@@ -1,6 +1,6 @@
 /* For regulations */
 
-/* division, chapter, section */
+/* Chapters */
 div.zhangJie { 
 	font-weight: bold;
 	font-size: larger;
@@ -21,6 +21,7 @@ p.law-hitem {
 	margin-left: 5em;
 }
 
+/* Single Articles */
 div.law-article {
     counter-reset: num;
 	position: relative;
@@ -40,7 +41,7 @@ p.xiang:not(:only-of-type)::before {
 	content: counter(num, upper-roman);
 	display: inline-block;
 	position: absolute;
-	left: -2em; /*  0em */
+	left: -2em;
 	margin-left: -1em;
 	text-align: right;
 	width: 2em;
@@ -60,6 +61,7 @@ p.mu {
 	margin-top: 5px; margin-bottom: 5px;
 }
 
+/* Print */
 @media print {
 	@page {
 		margin-top: 1.3cm;
@@ -71,10 +73,6 @@ p.mu {
 	div.zhangJie{
 		page-break-after: avoid;
 	}
-	/*div.law-article {
-		page-break-inside: avoid;
-		
-	}*/
 	p.law-art-num{
 		page-break-after: avoid;
 	}
