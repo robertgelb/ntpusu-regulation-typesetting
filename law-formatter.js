@@ -1,3 +1,5 @@
+/* use UTF-8 */
+
 function formatLaw() {
     
 	// the div class name "jfpc" means "just-for-paragraph-count"
