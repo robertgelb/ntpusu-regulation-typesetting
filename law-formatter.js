@@ -2,6 +2,25 @@
 
 function formatLaw() {
     
+	// 法規標題、最近異動日期、詳細沿革
+	
+	const inputTitle = document.getElementById('lawTitleInput').value;
+	const inputLastModified = document.getElementById('lawLMInput').value;
+    document.getElementById('lawTitlePrint').innerHTML = inputTitle;
+    document.getElementById('lawLMPrint').innerHTML = inputLastModified;
+	
+	const inputHist = document.getElementById('lawHistoryInput').value;
+	let outputHist = '<!-- History --> <div class="ts-header">沿革</div><div class="ts-content"><div class="ts-list is-ordered">\n';
+	if(inputHist !== null && inputHist !== '') {
+		const histLines = inputHist.split('\n');
+		histLines.forEach(histLine => {
+			outputHist += `\t<div class="item">\n\t\t${histLine}\n\t</div>\n`;
+		});
+	}
+	outputHist += '</div></div> <!-- end history --> \n';
+	document.getElementById('lawHistoryPreview').innerHTML = outputHist;
+    
+	// 法規內容
 	// the div class name "jfpc" means "just-for-paragraph-count"
 	
 	const inputText = document.getElementById('lawTextInput').value;

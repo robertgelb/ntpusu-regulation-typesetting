@@ -21,13 +21,27 @@
 		
 		<div class="ts-space is-small"></div>
 
+		<!-- Header Area -->
 		<div class="ts-content is-tertiary is-vertically-very-padded">
-			<div class="ts-center">
-				<div class="ts-header is-large">Regulatory Typesetting Tool</div>
-				<div class="ts-text is-secondary">National Taipei University Student Union</div>
+			<!-- preview mode: show tool name -->
+			<div class="no-print">
+				<div class="ts-center">
+					<div class="ts-header is-large">Regulatory Typesetting Tool</div>
+					<div class="ts-text is-secondary">National Taipei University Student Union</div>
+				</div>
+			</div>
+			<!-- print mode: show regulation title -->
+			<div class="no-screen">
+				<div class="ts-header is-large is-heavy">
+					<div id="lawTitlePrint"></div>
+				</div>
+				<div class="ts-text is-secondary">
+					<div id="lawLMPrint"></div>
+				</div>
 			</div>
 		</div>
 
+		<!-- Breadcrumb -->
 		<div class="ts-breadcrumb is-divided is-secondary no-print">
 			<a class="item" href="/">
 				<span class="ts-icon is-house-icon"></span>
@@ -36,6 +50,49 @@
 				Regulatory Typesetting
 			</a>
 		</div>
+		
+		<!-- Title & History Input Area grid -->
+		<div class="ts-grid mobile:is-stacked is-evenly-divided is-stretched no-print">
+		
+			<!-- title & basic history -->
+			<div class="column">
+				<div class="ts-content">
+					<div class="ts-wrap is-vertical">
+						<div class="ts-control is-wide">
+							<div class="label">Regulation title</div>
+							<div class="content is-fluid">
+								<div class="ts-input">
+									<input type="text" id="lawTitleInput" />
+								</div>
+							</div>
+						</div>
+						<div class="ts-control is-wide">
+							<div class="label">Last modified</div>
+							<div class="content is-fluid">
+								<div class="ts-input">
+									<input type="text" placeholder="修正日期：Y年M月D日" value="日期：年月日" id="lawLMInput" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- full history -->
+			<div class="column">
+				<div class="ts-content">
+					<div class="ts-input is-resizable">
+						<textarea placeholder="[History] Fill in the full history of the regulation here." id="lawHistoryInput"></textarea>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- [end] Title & History Input Area grid -->
+		
+		
+		
+		
 
 		<!-- textarea grid -->
 		<div class="ts-grid mobile:is-stacked is-evenly-divided is-stretched no-print">
@@ -45,7 +102,7 @@
 		<div class="column">
 		<div class="ts-content">
 			<div class="ts-input is-resizable">
-				<textarea placeholder="Please follow the Formatting Guidelines and fill in the plain text of the regulation here." id="lawTextInput"></textarea>
+				<textarea placeholder="[Content] Please follow the Formatting Guidelines and fill in the plain text of the regulation here." id="lawTextInput"></textarea>
 			</div>
 			<div class="ts-space is-small"></div>
 			
@@ -106,7 +163,10 @@
 		<div class="ts-content">
 			<div id="lawResultPreview"></div>
 		</div>
-		<!-- end preview result area -->	
+		<!-- end preview result area -->
+		
+		<!-- History -->
+		<div id="lawHistoryPreview"></div>
 		
 		<div class="no-print">
 			<div class="ts-divider is-section is-center-text">National Taipei University Student Union</div>
@@ -119,7 +179,7 @@
 				by NTPU Student Judiciary, MPL-2.0 license / <a href="https://github.com/robertgelb/ntpusu-regulation-typesetting">Github</a><br />Style - <a href="https://v4.tocas-ui.com">Tocas UI</a><br />Favicon - <a href="https://v4.tocas-ui.com">Twemoji</a> (Twitter 2020, CC BY 4.0)
 			</div>
 			<div class="ts-text is-tiny is-center-aligned no-screen">
-				generated using the NTPUSU Regulatory Typesetting Tool (developed by the Student Judiciary)
+				國立臺北大學學生自治會法規排版工具（由學生法院提供）
 			</div>
 		</div>
 		
